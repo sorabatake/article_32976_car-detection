@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  article-9-mmdet-3:
+    build:
+      context: .
+      dockerfile: env/Dockerfile_mmdet
+    runtime: nvidia
+    ports:
+      - "6667:6667"
+    volumes:
+      - type: bind
+        source: ./
+        target: /workspace/
+    working_dir: /workspace
+    shm_size: '64gb'
+    entrypoint:
+      # - /bin/bash
+      - /opt/conda/bin/jupyter-lab 
+      - --allow-root
+      - --ip=0.0.0.0
+      - --port=6667
+      - --NotebookApp.token=''

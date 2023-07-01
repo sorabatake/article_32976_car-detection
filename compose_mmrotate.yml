@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  article-9-mmrotate:
+    build:
+      context: .
+      dockerfile: env/Dockerfile_mmrotate
+    runtime: nvidia
+    ports:
+      - "6767:6767"
+    volumes:
+      - type: bind
+        source: ./
+        target: /workspace/
+    working_dir: /workspace
+    shm_size: '64gb'
+    entrypoint:
+      # - /bin/bash
+      - /opt/conda/bin/jupyter-lab 
+      - --allow-root
+      - --ip=0.0.0.0
+      - --port=6767
+      - --NotebookApp.token=''

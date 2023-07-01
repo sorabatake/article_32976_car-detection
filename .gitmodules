@@ -1,0 +1,9 @@
+[submodule "src/mmdetection"]
+	path = src/mmdetection
+	url = https://github.com/open-mmlab/mmdetection.git
+[submodule "src/cocosplit"]
+	path = src/cocosplit
+	url = https://github.com/akarazniewicz/cocosplit.git
+[submodule "src/mmrotate"]
+	path = src/mmrotate
+	url = https://github.com/open-mmlab/mmrotate.git

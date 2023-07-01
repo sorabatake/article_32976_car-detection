@@ -1,0 +1,17 @@
+# data
+*.zip
+*.TIF
+sample/train_scale1_h640_w640_oh0.0_ow0.0_min1
+sample/train_scale1_h1280_w1280_oh0.25_ow0.25_min1
+
+# cache
+__pycache__/
+*.pyc
+
+# logs
+src/work_dirs
+src/output/001
+src/inference
+
+# model
+src/weights

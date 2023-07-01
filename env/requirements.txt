@@ -1,0 +1,20 @@
+# notebook
+jupyterlab
+
+# basic
+numpy
+pandas 
+matplotlib
+seaborn
+opencv-python
+argparse
+
+# ml
+scikit-learn
+funcy
+scikit-multilearn
+albumentations
+pycocotools
+
+# geo
+tifffile
