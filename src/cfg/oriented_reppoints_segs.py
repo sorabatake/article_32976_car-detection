@@ -93,7 +93,7 @@ data = dict(
 
 # dataset settings
 dataset_type = 'DOTADataset'
-data_root = '../sample/train_scale1_h640_w640_oh0.0_ow0.0_min1/'
+data_root = '../sample/train_scale1_h640_w640_oh0.5_ow0.5_min1_segs/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -121,8 +121,8 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=32,
-    workers_per_gpu=8,
+    samples_per_gpu=4,
+    workers_per_gpu=4,
     train=dict(
         type=dataset_type,
         ann_file=data_root + '/train',
@@ -154,7 +154,7 @@ lr_config = dict(
     warmup_ratio=1.0 / 3,
     step=[15, 20])
 runner = dict(type='EpochBasedRunner', max_epochs=30)
-checkpoint_config = dict(interval=2)
+checkpoint_config = dict(interval=2, max_keep_ckpts=3)
 
 # yapf:disable
 log_config = dict(
@@ -170,6 +170,7 @@ log_level = 'INFO'
 load_from = 'weights/oriented_reppoints_r50_fpn_1x_dota_le135-ef072de9.pth'
 resume_from = None
 workflow = [('train', 1)]
+work_dirs = 'work_dirs/oriented_reppoints_segs/'
 
 # disable opencv multithreading to avoid system being overloaded
 opencv_num_threads = 0
