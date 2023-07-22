@@ -1,5 +1,7 @@
 # Article 32976
 
+![sample](./sample/sample_rotate_result.png)
+
 ## 記事
 [駐車場に停まっている車両の検知精度アップ？ 衛星データによる車両の回転検知とその実装方法]()のコード補完
 
