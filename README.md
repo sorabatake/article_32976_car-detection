@@ -7,7 +7,7 @@
 
 ## 環境構築
 
-- GPU Devide
+- GPU device
 - Cuda Driver
 - Nvidia Docker
 - Dcoker Compose
